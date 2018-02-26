@@ -1,0 +1,27 @@
+{
+  "name": "dadata-js",
+  "version": "0.0.0",
+  "description": "A dadata js client",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KazanExpress/dadata-js.git"
+  },
+  "keywords": [
+    "dadata",
+    "js",
+    "JavaSctipt",
+    "autocomplete",
+    "address",
+    "library"
+  ],
+  "author": "KazanExpress",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/KazanExpress/dadata-js/issues"
+  },
+  "homepage": "https://github.com/KazanExpress/dadata-js#readme"
+}
