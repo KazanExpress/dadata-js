@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dadata.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> dadata.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>6/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BaseModel from 'basemodelts'
+&nbsp;
+const DADATA_API_URL = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs'
+&nbsp;
+const DADATA_HEADERS = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+&nbsp;
+const SUGGESTION_METHODS = {
+  'fio': 'POST',
+  'address': 'POST',
+  'party': 'POST',
+  'email': 'POST',
+  'bank': 'POST'
+}
+&nbsp;
+const DADATA_PARTY_STATUSES = [
+  'ACTIVE',
+  'LIQUIDATING',
+  'LIQUIDATED'
+]
+&nbsp;
+const DADATA_PARTY_TYPES = [
+  'LEGAL',
+  'INDIVIDUAL'
+]
+&nbsp;
+export default class DaDataModel extends BaseModel {
+  constructor (root, token) {
+    super(root)
+<span class="cstat-no" title="statement not covered" >    this.addHeaders(DADATA_HEADERS)</span>
+<span class="cstat-no" title="statement not covered" >    this.setToken(token)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this</span>
+&nbsp;
+    .describeContainer('base', {
+      'query': 'string',
+      'count': 'int'
+    })
+&nbsp;
+    // FIO CONTAINER
+    .addContainer('fio extends base', {
+      'parts': 'allow:[null].array',
+      'gender': 'string'
+    })
+&nbsp;
+    // ADDRESS CONTAINER
+    .addContainer('address extends base', {
+      'locations': 'allow:[null].array',
+      'locations_boost': 'allow:[null].array',
+      'from_bound': 'allow:[null].bound',
+      'to_bound': 'allow:[null].bound'
+    })
+&nbsp;
+    // PARTY CONTAINER
+    .addContainer('party extends base', {
+      'status': 'allow:[null].array.party_status',
+      'type': 'allow:[null].array.party_types',
+      'locations': 'allow:[null].array',
+    })
+&nbsp;
+    .addFieldProcessorsBulk({
+      bound: <span class="fstat-no" title="function not covered" >va</span>l =&gt; <span class="cstat-no" title="statement not covered" >val &amp;&amp; val.value ? val : null,</span>
+      party_status: <span class="fstat-no" title="function not covered" >va</span>l =&gt; <span class="cstat-no" title="statement not covered" >DADATA_PARTY_STATUSES.includes(val) ? val : null,</span>
+      party_types: <span class="fstat-no" title="function not covered" >va</span>l =&gt; <span class="cstat-no" title="statement not covered" >DADATA_PARTY_TYPES.includes(val) ? val : null,</span>
+    })
+&nbsp;
+    .addModifiersBulk({
+      allow: <span class="fstat-no" title="function not covered" >(v</span>alue, params) =&gt; {
+<span class="cstat-no" title="statement not covered" >        return { break: ~params.indexOf(value) }</span>
+      },
+      default: <span class="fstat-no" title="function not covered" >(v</span>alue, param) =&gt; {
+<span class="cstat-no" title="statement not covered" >        return { value: value || param }</span>
+      }
+    })
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ge</span>t headers () {
+<span class="cstat-no" title="statement not covered" >    return this._headers || {}</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  se</span>t headers (value = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    this._headers = value</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ad</span>dHeaders (headers = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >    this._headers = { ...this._headers, ...headers }</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  se</span>tToken (token) {
+<span class="cstat-no" title="statement not covered" >    this.token = token</span>
+<span class="cstat-no" title="statement not covered" >    this.addHeaders({</span>
+      'Authorization': `Token ${token}`
+    })
+  }
+&nbsp;
+  // QUERY METHODS
+<span class="fstat-no" title="function not covered" >  su</span>ggest (type, options) {
+<span class="cstat-no" title="statement not covered" >    if (!this.getContainer(type)) {</span>
+<span class="cstat-no" title="statement not covered" >      console.error(`DaDataModel::suggest() Suggestion type "${type}" not found`)</span>
+<span class="cstat-no" title="statement not covered" >      return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        reject(`Suggestion type "${type}" not found`)</span>
+      })
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this[`$${type}`].data = options</span>
+<span class="cstat-no" title="statement not covered" >    return this.generateQuery({</span>
+      uri: `${DADATA_API_URL}/suggest/${type}`,
+      method: SUGGESTION_METHODS[type],
+      container: type
+    })()
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 27 2018 19:50:42 GMT+0300 (Russia TZ 2 Standard Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
