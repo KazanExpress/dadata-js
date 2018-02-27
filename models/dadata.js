@@ -80,8 +80,8 @@ export default class DaDataModel extends BaseModel {
     return this._headers || {}
   }
 
-  set headers (value = {}) {
-    this._headers = value
+  set headers (value) {
+    this._headers = value || {}
   }
 
   addHeaders (headers = {}) {

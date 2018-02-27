@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1519750242359" clover="3.2.0">
-  <project timestamp="1519750242360" name="All files">
-    <metrics statements="25" coveredstatements="6" conditionals="16" coveredconditionals="0" methods="12" coveredmethods="1" elements="53" coveredelements="7" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1">
+<coverage generated="1519752972712" clover="3.2.0">
+  <project timestamp="1519752972712" name="All files">
+    <metrics statements="25" coveredstatements="12" conditionals="17" coveredconditionals="0" methods="12" coveredmethods="3" elements="54" coveredelements="15" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1">
       <file name="dadata.js" path="C:\Users\xps\Documents\Programming\Projects\KazanExpress\dadata-js\models\dadata.js">
-        <metrics statements="25" coveredstatements="6" conditionals="16" coveredconditionals="0" methods="12" coveredmethods="1"/>
+        <metrics statements="25" coveredstatements="12" conditionals="17" coveredconditionals="0" methods="12" coveredmethods="3"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
         <line num="64" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="71" count="0" type="stmt"/>
         <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="80" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="84" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="92" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="88" count="2" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
         <line num="100" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="101" count="0" type="stmt"/>
         <line num="102" count="0" type="stmt"/>

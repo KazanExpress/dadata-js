@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">24% </span>
+        <span class="strong">48% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/25</span>
+        <span class='fraction'>12/25</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/16</span>
+        <span class='fraction'>0/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/12</span>
+        <span class='fraction'>3/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">24% </span>
+        <span class="strong">48% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/25</span>
+        <span class='fraction'>12/25</span>
       </div>
     </div>
   </div>
@@ -189,12 +189,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -218,26 +216,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -249,8 +245,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -304,10 +304,10 @@ const DADATA_PARTY_TYPES = [
 export default class DaDataModel extends BaseModel {
   constructor (root, token) {
     super(root)
-<span class="cstat-no" title="statement not covered" >    this.addHeaders(DADATA_HEADERS)</span>
-<span class="cstat-no" title="statement not covered" >    this.setToken(token)</span>
+    this.addHeaders(DADATA_HEADERS)
+    this.setToken(token)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this</span>
+    this
 &nbsp;
     .describeContainer('base', {
       'query': 'string',
@@ -355,17 +355,17 @@ export default class DaDataModel extends BaseModel {
 <span class="cstat-no" title="statement not covered" >    return this._headers || {}</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  se</span>t headers (value = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >    this._headers = value</span>
+<span class="fstat-no" title="function not covered" >  se</span>t headers (value) {
+<span class="cstat-no" title="statement not covered" >    this._headers = value || {}</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  ad</span>dHeaders (headers = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >    this._headers = { ...this._headers, ...headers }</span>
+  addHeaders (headers = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+    this._headers = { ...this._headers, ...headers }
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  se</span>tToken (token) {
-<span class="cstat-no" title="statement not covered" >    this.token = token</span>
-<span class="cstat-no" title="statement not covered" >    this.addHeaders({</span>
+  setToken (token) {
+    this.token = token
+    this.addHeaders({
       'Authorization': `Token ${token}`
     })
   }
@@ -394,7 +394,7 @@ export default class DaDataModel extends BaseModel {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 27 2018 19:50:42 GMT+0300 (Russia TZ 2 Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 27 2018 20:36:12 GMT+0300 (Russia TZ 2 Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>
