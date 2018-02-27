@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/KazanExpress/dadata-js/issues"
   },
-  "homepage": "https://github.com/KazanExpress/dadata-js#readme"
+  "homepage": "https://github.com/KazanExpress/dadata-js#readme",
+  "dependencies": {
+    "basemodelts": "^1.4.1"
+  }
 }
