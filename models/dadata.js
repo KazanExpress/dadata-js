@@ -6,8 +6,31 @@ const DADATA_HEADERS = {
 }
 
 export default class DaDataModel extends BaseModel {
-  constructor (token) {
+  constructor (root, token) {
+    super(root)
     this.setToken(token)
+
+    this
+
+    .describeContainer('base', {
+      'query': 'string',
+      'count': 'int'
+    })
+
+    // FIO CONTAINER
+    .addContainer('fio extends base', {
+      'parts': 'array',
+      'gender': 'string'
+    })
+
+    .addModifiersBulk({
+      allow: (value, params) => {
+        return { break: ~params.indexOf(value) }
+      },
+      default: (value, param) => {
+        return { value: value || param }
+      }
+    })
   }
 
   get headers () {
