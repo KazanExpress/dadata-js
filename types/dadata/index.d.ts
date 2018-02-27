@@ -1,4 +1,4 @@
-import { DaDataModel } from '../models/dadata';
+import { DaDataModel } from '../models/dadata'
 import * as Responses from './responses'
 
 declare enum SuggestionTypes {
@@ -14,7 +14,7 @@ interface Options {
 }
 
 export default class DaData {
-  constructor (options: DaData);
+  constructor (options: DaData)
 
   model: DaDataModel<this>
 
