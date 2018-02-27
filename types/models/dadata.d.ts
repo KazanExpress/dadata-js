@@ -1,13 +1,13 @@
-import BaseModel from 'basemodelts'
+import BaseModel from 'basemodelts/src'
 
-export class DaDataModel extends BaseModel {
+export class DaDataModel<T> extends BaseModel<T> {
   private _headers: Headers
 
-  constructor (token: string)
+  constructor (root: T, token: string)
 
   public headers: Headers
-  public addHeaders (headers: Headers)
-  public setToken (token: string)
+  public addHeaders (headers: Headers): void
+  public setToken (token: string): void
 }
 
 export interface Headers {
@@ -16,4 +16,4 @@ export interface Headers {
   'Authorization'?: string
 }
 
-import DaData, { Responses } from "../dadata";
+import DaData, { Responses } from "../dadata"

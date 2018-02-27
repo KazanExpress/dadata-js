@@ -1,3 +1,5 @@
+import './models/dadata'
+
 import * as Responses from './responses'
 
 declare enum Suggestions {
