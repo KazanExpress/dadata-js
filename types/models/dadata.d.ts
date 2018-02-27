@@ -1,4 +1,4 @@
-import { BaseModel } from 'basemodelts'
+import BaseModel from 'basemodelts'
 
 export class DaDataModel extends BaseModel {
   private _headers: Headers
