@@ -1,3 +1,1 @@
-export namespace Responses {
-	  
-}
+export declare const x: number

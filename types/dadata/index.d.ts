@@ -1,9 +1,20 @@
-export namespace DaData {
-	export type Suggestions = 'NAME' | 'ADDRESS' | 'PARTY' | 'EMAIL' | 'BANK'
+import * as Responses from './responses'
 
-	export * from './responses'
+declare enum Suggestions {
+  NAME = 'name',
+  ADDRESS = 'address',
+  PARTY = 'party',
+  EMAIL = 'email',
+  BANK = 'bank'
 }
 
-export class DaData {
+interface Options {
 
 }
+
+export default class DaData {
+  constructor (options: DaData);
+  fixData (type: DaData, text: string): Promise<string>;
+}
+
+export { Responses, Suggestions, Options }
