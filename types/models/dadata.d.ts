@@ -15,5 +15,3 @@ export interface Headers {
   'Accept': 'application/json' | 'application/xml'
   'Authorization'?: string
 }
-
-import DaData, { Responses } from "../dadata"

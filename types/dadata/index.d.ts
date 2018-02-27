@@ -1,9 +1,8 @@
-import './models/dadata'
-
+import { DaDataModel } from '../models/dadata';
 import * as Responses from './responses'
 
-declare enum Suggestions {
-  NAME = 'name',
+declare enum SuggestionTypes {
+  NAME = 'fio',
   ADDRESS = 'address',
   PARTY = 'party',
   EMAIL = 'email',
@@ -16,7 +15,15 @@ interface Options {
 
 export default class DaData {
   constructor (options: DaData);
-  fixData (type: DaData, text: string): Promise<string>;
+
+  model: DaDataModel<this>
+
+  suggest (type: SuggestionTypes, query: string, count?: number, options?: any): Promise<string>
+
+  getLocationByIP(): {
+    lattitude: string,
+    longitude: string
+  }
 }
 
-export { Responses, Suggestions, Options }
+export { Responses, SuggestionTypes, Options }
