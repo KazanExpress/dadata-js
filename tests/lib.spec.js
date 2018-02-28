@@ -1,7 +1,7 @@
 import DaDataJS from '../'
 
 describe('dadata-js', () => {
-  const token = '5ef98f5781a106962077fb18109095f9f11ebac1';
+  const token = '278908b74c6a3a5433aaec7c7364a38420722c05';
   const dadata = new DaDataJS(token)
 
   it('is created from class', () => {
