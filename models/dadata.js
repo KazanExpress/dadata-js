@@ -36,28 +36,28 @@ export default class DaDataModel extends BaseModel {
 
     .describeContainer('base', {
       'query': 'string',
-      'count': 'allow:[null].int'
+      'count?': 'int'
     })
 
     // FIO CONTAINER
     .addContainer('fio extends base', {
-      'parts': 'allow:[null].array',
-      'gender': 'string'
+      'parts?': 'array',
+      'gender?': 'string'
     })
 
     // ADDRESS CONTAINER
     .addContainer('address extends base', {
-      'locations': 'allow:[null].array',
-      'locations_boost': 'allow:[null].array',
-      'from_bound': 'allow:[null].bound',
-      'to_bound': 'allow:[null].bound'
+      'locations?': 'array',
+      'locations_boost?': 'array',
+      'from_bound?': 'bound',
+      'to_bound?': 'bound'
     })
 
     // PARTY CONTAINER
     .addContainer('party extends base', {
-      'status': 'allow:[null].array.party_status',
-      'type': 'allow:[null].array.party_types',
-      'locations': 'allow:[null].array',
+      'status?': 'array.party_status',
+      'type?': 'array.party_types',
+      'locations?': 'array',
     })
 
     .addFieldProcessorsBulk({
@@ -68,7 +68,7 @@ export default class DaDataModel extends BaseModel {
 
     .addModifiersBulk({
       allow: (value, params) => {
-        return { break: ~params.indexOf(value) }
+        return { break: !!~params.indexOf(value) }
       },
       default: (value, param) => {
         return { value: value || param }
@@ -104,7 +104,11 @@ export default class DaDataModel extends BaseModel {
       })
     }
 
+    console.log('TYPE', type)
+    console.log('OPTIONS', options)
+
     this[`$${type}`].data = options
+    console.log('CONTAINER', this[`$${type}`])
     return this.generateQuery({
       uri: `${DADATA_API_URL}/suggest/${type}`,
       method: SUGGESTION_METHODS[type],

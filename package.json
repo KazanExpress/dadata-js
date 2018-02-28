@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/KazanExpress/dadata-js#readme",
   "dependencies": {
-    "basemodelts": "^1.4.1"
+    "basemodelts": "^1.4.3",
+    "fetch-headers": "^2.0.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
