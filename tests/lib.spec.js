@@ -1,3 +1,4 @@
+import '../polyfills'
 import DaDataJS from '../'
 
 describe('dadata-js', () => {
@@ -12,12 +13,11 @@ describe('dadata-js', () => {
   })
 
   it('fetches suggestions', async () => {
-    dadata.model.interceptor = (response) => {
-      console.log("City: ", response)
-    }
-
     const suggestions = await dadata.suggest('address', 'г Каз')
     expect(suggestions).toEqual(dadata.suggestions)
-    expect(suggestions).toContain('г Казань')
+    expect(suggestions.length).toBeGreaterThan(0)
+
+    const result = suggestions.find(s => s.value === 'г Казань');
+    expect(result).toBeTruthy();
   })
 })
