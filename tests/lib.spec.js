@@ -16,13 +16,8 @@ describe('dadata-js', () => {
       console.log("City: ", response)
     }
 
-    try {
-      const suggestions = await dadata.suggest('address', 'г Каз')
-      expect(suggestions).toEqual(dadata.suggestions)
-      // expect(suggestions).toContain('г Казань')
-
-    } catch (e) {
-      console.log("ERRRORRRR: ", e)
-    }
+    const suggestions = await dadata.suggest('address', 'г Каз')
+    expect(suggestions).toEqual(dadata.suggestions)
+    expect(suggestions).toContain('г Казань')
   })
 })
