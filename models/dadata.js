@@ -84,6 +84,11 @@ export default class DaDataModel extends BaseModel {
     this._headers = value || {}
   }
 
+  beforeFetch (uri, fetch_params) {
+    fetch_params.headers = { ...fetch_params.headers, ...this.headers }
+    return { uri, fetch_params }
+  }
+
   addHeaders (headers = {}) {
     this._headers = { ...this._headers, ...headers }
   }
@@ -104,11 +109,7 @@ export default class DaDataModel extends BaseModel {
       })
     }
 
-    console.log('TYPE', type)
-    console.log('OPTIONS', options)
-
-    this[`$${type}`].data = options
-    console.log('CONTAINER', this[`$${type}`])
+    this.containers[type].data = { ...options }
     return this.generateQuery({
       uri: `${DADATA_API_URL}/suggest/${type}`,
       method: SUGGESTION_METHODS[type],

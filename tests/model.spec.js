@@ -3,9 +3,9 @@ import polyfills from '../polyfills'
 
 describe('DaDataModel', () => {
   it('sets token', () => {
-    const model = new DaDataModel(null, 'asdasdasd')
+    const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
 
-    expect(model.token).toBe('asdasdasd')
+    expect(model.token).toBe('278908b74c6a3a5433aaec7c7364a38420722c05')
   })
 
   it('adds api headers', () => {
@@ -41,22 +41,42 @@ describe('DaDataModel', () => {
     expect(model._headers).toEqual({})
   })
 
-  it('sends suggest query', async () => {
+  it('describes base container', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    model.interceptor = (resp) => {
-      console.log('HEADERS', model.headers)
-      console.log('INTER', resp)
-    }
+    expect(model.described_containers).toHaveProperty('base')
+    expect(model.described_containers.base).toEqual({
+      'query': 'string',
+      'count?': 'int'
+    })
+  })
+
+  it('adds address container', () => {
+    const model = new DaDataModel(null, 'asdasdasd')
+
+    expect(!!model.getContainer('address')).toBe(true)
+    expect(model.getContainer('address')).toHaveProperty('fields')
+    expect(model.getContainer('address').fields).toEqual({
+      'query': 'string',
+      'count?': 'int',
+      'locations?': 'array',
+      'locations_boost?': 'array',
+      'from_bound?': 'bound',
+      'to_bound?': 'bound'
+    })
+  })
+
+  it('sends suggest query', async () => {
+    const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
 
     try {
       let res = await model.suggest('address', { query: 'Казань', count: 5 })
-      console.log('RES', res)
+      expect(res).toHaveProperty('suggestions')
+      expect(res.suggestions).toBeInstanceOf(Array)
+      expect(res.suggestions).toHaveLength(5)
     } catch (e) {
-      console.log('Error', e)
+      console.error('Error', e)
     }
-
-    // expect(res).toHaveProperty('suggestions')
   })
 
   it('sets bound processor', () => {
