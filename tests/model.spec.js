@@ -79,6 +79,18 @@ describe('DaDataModel', () => {
     }
   })
 
+  it('sends wrong suggest type', async () => {
+    const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
+
+    try {
+      let res = await model.suggest('whatever', { query: 'Казань', count: 5 })
+    } catch (e) {
+      expect(e).toEqual({
+        error: 'Suggestion type "whatever" not found',
+      })
+    }
+  })
+
   it('sets bound processor', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 

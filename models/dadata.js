@@ -103,9 +103,10 @@ export default class DaDataModel extends BaseModel {
   // QUERY METHODS
   suggest (type, options) {
     if (!this.getContainer(type)) {
-      console.error(`DaDataModel::suggest() Suggestion type "${type}" not found`)
       return new Promise((resolve, reject) => {
-        reject(`Suggestion type "${type}" not found`)
+        reject({
+          error: `Suggestion type "${type}" not found`
+        })
       })
     }
 
