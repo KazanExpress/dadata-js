@@ -36,7 +36,7 @@ export default class DaDataModel extends BaseModel {
 
     .describeContainer('base', {
       'query': 'string',
-      'count': 'int'
+      'count': 'allow:[null].int'
     })
 
     // FIO CONTAINER

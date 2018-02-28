@@ -11,7 +11,7 @@ export default class DaData {
 
   async suggest (type, query/* , count, options */) {
     try {
-      var result = await this.model.suggest(type, { query, count: arguments[2], ...(arguments[3] || {}) })
+      var result = await this.model.suggest(type, { query, count: arguments[2] || null, ...(arguments[3] || {}) })
 
       if (Object.keys(result).length > 0) {
         this._suggestions = result.suggestions
