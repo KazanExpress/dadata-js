@@ -117,5 +117,4 @@ export default class DaDataModel extends BaseModel {
       container: type
     })()
   }
-
 }
