@@ -60,6 +60,15 @@ export default class DaDataModel extends BaseModel {
       'locations?': 'array',
     })
 
+    // EMAIL CONTAINER
+    .addContainer('email extends base', {})
+
+    // BANK CONTAINER
+    .addContainer('bank extends base', {
+      'status?': 'array.party_status',
+      'type?': 'array.party_types'
+    })
+
     .addFieldProcessorsBulk({
       bound: val => val && val.value ? val : null,
       party_status: val => DADATA_PARTY_STATUSES.includes(val) ? val : null,
