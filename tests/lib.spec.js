@@ -22,8 +22,8 @@ describe('dadata-js', () => {
   })
 
   it('fetches ip', async () => {
-    const location = await dadata.detectAddressByIP();
-    expect(location).toBeTruthy();
-    expect(location.data).toBeTruthy();
+    const result = await dadata.detectAddressByIP();
+    expect(result.location).toBeTruthy();
+    expect(result.location.data).toBeTruthy();
   })
 })
