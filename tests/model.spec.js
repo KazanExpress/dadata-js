@@ -66,6 +66,57 @@ describe('DaDataModel', () => {
     })
   })
 
+  it('adds fio container', () => {
+    const model = new DaDataModel(null, 'asdasdasd')
+
+    expect(!!model.getContainer('fio')).toBe(true)
+    expect(model.getContainer('fio')).toHaveProperty('fields')
+    expect(model.getContainer('fio').fields).toEqual({
+      'query': 'string',
+      'count?': 'int',
+      'parts?': 'array',
+      'gender?': 'string'
+    })
+  })
+
+  it('adds party container', () => {
+    const model = new DaDataModel(null, 'asdasdasd')
+
+    expect(!!model.getContainer('party')).toBe(true)
+    expect(model.getContainer('party')).toHaveProperty('fields')
+    expect(model.getContainer('party').fields).toEqual({
+      'query': 'string',
+      'count?': 'int',
+      'status?': 'array.party_status',
+      'type?': 'array.party_types',
+      'locations?': 'array'
+    })
+  })
+
+  it('adds email container', () => {
+    const model = new DaDataModel(null, 'asdasdasd')
+
+    expect(!!model.getContainer('email')).toBe(true)
+    expect(model.getContainer('email')).toHaveProperty('fields')
+    expect(model.getContainer('email').fields).toEqual({
+      'query': 'string',
+      'count?': 'int'
+    })
+  })
+
+  it('adds bank container', () => {
+    const model = new DaDataModel(null, 'asdasdasd')
+
+    expect(!!model.getContainer('bank')).toBe(true)
+    expect(model.getContainer('bank')).toHaveProperty('fields')
+    expect(model.getContainer('bank').fields).toEqual({
+      'query': 'string',
+      'count?': 'int',
+      'status?': 'array.party_status',
+      'type?': 'array.party_types'
+    })
+  })
+
   it('sends suggest query', async () => {
     const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
 
