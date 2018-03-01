@@ -126,4 +126,11 @@ export default class DaDataModel extends BaseModel {
       container: type
     })()
   }
+
+  detectAddressByIP (ip) {
+    return this.generateQuery({
+      uri: `${DADATA_API_URL}/detectAddressByIp${ip ? `ip=${ip}` : ''}`,
+      method: 'GET'
+    })()
+  }
 }

@@ -33,6 +33,6 @@ export default class DaData {
   }
 
   detectAddressByIP () {
-    return this.model.detectAddressByIP(arguments[0])
+    return this.model.detectAddressByIP(arguments[0] || null)
   }
 }

@@ -20,4 +20,10 @@ describe('dadata-js', () => {
     const result = suggestions.find(s => s.value === 'г Казань');
     expect(result).toBeTruthy();
   })
+
+  it('fetches ip', async () => {
+    const location = await dadata.detectAddressByIP();
+    expect(location).toBeTruthy();
+    expect(location.data).toBeTruthy();
+  })
 })
