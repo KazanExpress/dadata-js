@@ -16,14 +16,15 @@ interface Options {
 export default class DaData {
   constructor (options: DaData)
 
+  readonly suggestions: any[]
+
   model: DaDataModel<this>
 
   suggest (type: SuggestionTypes, query: string, count?: number, options?: any): Promise<string>
 
-  getLocationByIP(): {
-    lattitude: string,
-    longitude: string
-  }
+  clearCache(): any[]
+
+  detectAddressByIP(): any
 }
 
 export { Responses, SuggestionTypes, Options }

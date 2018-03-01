@@ -26,6 +26,12 @@ export default class DaData {
     }
   }
 
+  clearCache() {
+    const temp = [...this._suggestions];
+    this._suggestions.splice(0);
+    return temp;
+  }
+
   detectAddressByIP () {
     return this.model.detectAddressByIP(arguments[0])
   }
