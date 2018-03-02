@@ -158,13 +158,13 @@ describe('DaDataModel', () => {
   it('sets bound processor', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    let bound_proc = model.processors['bound']
-    let filtered_val1 = bound_proc({})
-    let filtered_val2 = bound_proc({ value: null })
-    let filtered_val3 = bound_proc(null)
-    let filtered_val4 = bound_proc({ value: 123 })
+    let proc = model.processors['bound']
+    let filtered_val1 = proc({})
+    let filtered_val2 = proc({ value: null })
+    let filtered_val3 = proc(null)
+    let filtered_val4 = proc({ value: 123 })
 
-    expect(bound_proc).toBeInstanceOf(Function)
+    expect(proc).toBeInstanceOf(Function)
     expect(filtered_val1).toBe(null)
     expect(filtered_val2).toBe(null)
     expect(filtered_val3).toBe(null)
@@ -174,13 +174,13 @@ describe('DaDataModel', () => {
   it('sets party_status processor', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    let party_status_proc = model.processors['party_status']
-    let filtered_val1 = party_status_proc('LIQUIDATING')
-    let filtered_val2 = party_status_proc('ANY_OTHER')
-    let filtered_val3 = party_status_proc(null)
-    let filtered_val4 = party_status_proc()
+    let proc = model.processors['party_status']
+    let filtered_val1 = proc('LIQUIDATING')
+    let filtered_val2 = proc('ANY_OTHER')
+    let filtered_val3 = proc(null)
+    let filtered_val4 = proc()
 
-    expect(party_status_proc).toBeInstanceOf(Function)
+    expect(proc).toBeInstanceOf(Function)
     expect(filtered_val1).toBe('LIQUIDATING')
     expect(filtered_val2).toBe(null)
     expect(filtered_val3).toBe(null)
@@ -190,13 +190,13 @@ describe('DaDataModel', () => {
   it('sets party_types processor', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    let party_types_proc = model.processors['party_types']
-    let filtered_val1 = party_types_proc('INDIVIDUAL')
-    let filtered_val2 = party_types_proc('ANY_OTHER')
-    let filtered_val3 = party_types_proc(null)
-    let filtered_val4 = party_types_proc()
+    let proc = model.processors['party_types']
+    let filtered_val1 = proc('INDIVIDUAL')
+    let filtered_val2 = proc('ANY_OTHER')
+    let filtered_val3 = proc(null)
+    let filtered_val4 = proc()
 
-    expect(party_types_proc).toBeInstanceOf(Function)
+    expect(proc).toBeInstanceOf(Function)
     expect(filtered_val1).toBe('INDIVIDUAL')
     expect(filtered_val2).toBe(null)
     expect(filtered_val3).toBe(null)
@@ -206,13 +206,13 @@ describe('DaDataModel', () => {
   it('sets allow modifier', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    let allow_mod = model.modifiers['allow']
-    let filtered_val1 = allow_mod(null, [null])
-    let filtered_val2 = allow_mod('ANY_OTHER', [null])
-    let filtered_val3 = allow_mod(1, [null])
-    let filtered_val4 = allow_mod(undefined, [null])
+    let mod = model.modifiers['allow']
+    let filtered_val1 = mod(null, [null])
+    let filtered_val2 = mod('ANY_OTHER', [null])
+    let filtered_val3 = mod(1, [null])
+    let filtered_val4 = mod(undefined, [null])
 
-    expect(allow_mod).toBeInstanceOf(Function)
+    expect(mod).toBeInstanceOf(Function)
     expect(filtered_val1).toEqual({ break: true })
     expect(filtered_val2).toEqual({ break: false })
     expect(filtered_val3).toEqual({ break: false })
@@ -222,14 +222,14 @@ describe('DaDataModel', () => {
   it('sets default modifier', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    let default_mod = model.modifiers['default']
-    let filtered_val1 = default_mod(null, 5)
-    let filtered_val2 = default_mod('ANY_OTHER', 5)
-    let filtered_val3 = default_mod(1, 5)
-    let filtered_val4 = default_mod(undefined, 5)
-    let filtered_val5 = default_mod({ r: 3 }, 5)
+    let mod = model.modifiers['default']
+    let filtered_val1 = mod(null, 5)
+    let filtered_val2 = mod('ANY_OTHER', 5)
+    let filtered_val3 = mod(1, 5)
+    let filtered_val4 = mod(undefined, 5)
+    let filtered_val5 = mod({ r: 3 }, 5)
 
-    expect(default_mod).toBeInstanceOf(Function)
+    expect(mod).toBeInstanceOf(Function)
     expect(filtered_val1).toEqual({ value: 5 })
     expect(filtered_val2).toEqual({ value: 'ANY_OTHER' })
     expect(filtered_val3).toEqual({ value: 1 })
