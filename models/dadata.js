@@ -46,18 +46,18 @@ export default class DaDataModel extends BaseModel {
       'query': 'string.strip:300',
     })
 
-    .describeContainer('count extends query', {
+    .describeContainer('base extends query', {
       'count?': 'int'
     })
 
     // FIO CONTAINER
-    .addContainer('fio extends count', {
+    .addContainer('fio extends base', {
       'parts?': 'array',
       'gender?': 'string'
     })
 
     // ADDRESS CONTAINER
-    .addContainer('address extends count', {
+    .addContainer('address extends base', {
       'locations?': 'array',
       'locations_boost?': 'array',
       'from_bound?': 'bound',
@@ -65,17 +65,17 @@ export default class DaDataModel extends BaseModel {
     })
 
     // PARTY CONTAINER
-    .addContainer('party extends count', {
+    .addContainer('party extends base', {
       'status?': 'array.party_status',
       'type?': 'array.party_types',
       'locations?': 'array',
     })
 
     // EMAIL CONTAINER
-    .addContainer('email extends count', {})
+    .addContainer('email extends base', {})
 
     // BANK CONTAINER
-    .addContainer('bank extends count', {
+    .addContainer('bank extends base', {
       'status?': 'array.party_status',
       'type?': 'array.party_types'
     })

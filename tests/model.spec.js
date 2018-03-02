@@ -4,6 +4,22 @@ import polyfills from '../polyfills'
 const TEST_API_KEY = '278908b74c6a3a5433aaec7c7364a38420722c05'
 
 describe('DaDataModel', () => {
+
+  const BASE_CONTAINER_FIELDS = {
+    'query': 'string.strip:300',
+    'count?': 'int'
+  }
+
+  const DEFAULT_JSON_HEADERS = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  }
+
+  const DEFAULT_XML_HEADERS = {
+    'Content-Type': 'application/xml',
+    'Accept': 'application/xml'
+  }
+
   it('sets token', () => {
     const model = new DaDataModel(null, TEST_API_KEY)
 
@@ -18,8 +34,7 @@ describe('DaDataModel', () => {
     })
 
     expect(model.headers).toEqual({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
+      ...DEFAULT_JSON_HEADERS,
       'Authorization': 'Token asdasdasd',
       'hdr_key': 'hdr_value'
     })
@@ -28,15 +43,9 @@ describe('DaDataModel', () => {
   it('rewrites api headers', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
-    model.headers = {
-      'Content-Type': 'application/xml',
-      'Accept': 'application/xml'
-    }
+    model.headers = DEFAULT_XML_HEADERS
 
-    expect(model._headers).toEqual({
-      'Content-Type': 'application/xml',
-      'Accept': 'application/xml'
-    })
+    expect(model._headers).toEqual(DEFAULT_XML_HEADERS)
 
     model.headers = null
 
@@ -47,10 +56,7 @@ describe('DaDataModel', () => {
     const model = new DaDataModel(null, 'asdasdasd')
 
     expect(model.described_containers).toHaveProperty('base')
-    expect(model.described_containers.base).toEqual({
-      'query': 'string',
-      'count?': 'int'
-    })
+    expect(model.described_containers.base).toEqual(BASE_CONTAINER_FIELDS)
   })
 
   it('adds address container', () => {
@@ -59,8 +65,7 @@ describe('DaDataModel', () => {
     expect(!!model.getContainer('address')).toBe(true)
     expect(model.getContainer('address')).toHaveProperty('fields')
     expect(model.getContainer('address').fields).toEqual({
-      'query': 'string',
-      'count?': 'int',
+      ...BASE_CONTAINER_FIELDS,
       'locations?': 'array',
       'locations_boost?': 'array',
       'from_bound?': 'bound',
@@ -74,8 +79,7 @@ describe('DaDataModel', () => {
     expect(!!model.getContainer('fio')).toBe(true)
     expect(model.getContainer('fio')).toHaveProperty('fields')
     expect(model.getContainer('fio').fields).toEqual({
-      'query': 'string',
-      'count?': 'int',
+      ...BASE_CONTAINER_FIELDS,
       'parts?': 'array',
       'gender?': 'string'
     })
@@ -87,8 +91,7 @@ describe('DaDataModel', () => {
     expect(!!model.getContainer('party')).toBe(true)
     expect(model.getContainer('party')).toHaveProperty('fields')
     expect(model.getContainer('party').fields).toEqual({
-      'query': 'string',
-      'count?': 'int',
+      ...BASE_CONTAINER_FIELDS,
       'status?': 'array.party_status',
       'type?': 'array.party_types',
       'locations?': 'array'
@@ -100,10 +103,7 @@ describe('DaDataModel', () => {
 
     expect(!!model.getContainer('email')).toBe(true)
     expect(model.getContainer('email')).toHaveProperty('fields')
-    expect(model.getContainer('email').fields).toEqual({
-      'query': 'string',
-      'count?': 'int'
-    })
+    expect(model.getContainer('email').fields).toEqual(BASE_CONTAINER_FIELDS)
   })
 
   it('adds bank container', () => {
@@ -112,8 +112,7 @@ describe('DaDataModel', () => {
     expect(!!model.getContainer('bank')).toBe(true)
     expect(model.getContainer('bank')).toHaveProperty('fields')
     expect(model.getContainer('bank').fields).toEqual({
-      'query': 'string',
-      'count?': 'int',
+      ...BASE_CONTAINER_FIELDS,
       'status?': 'array.party_status',
       'type?': 'array.party_types'
     })
