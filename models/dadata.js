@@ -42,23 +42,22 @@ export default class DaDataModel extends BaseModel {
 
     this
 
-    .describeContainer('base', {
-      'query': 'string',
+    .describeContainer('query', {
+      'query': 'string.strip:300',
+    })
+
+    .describeContainer('count extends query', {
       'count?': 'int'
     })
 
-    .describeContainer('find', {
-      'query': 'string'
-    })
-
     // FIO CONTAINER
-    .addContainer('fio extends base', {
+    .addContainer('fio extends count', {
       'parts?': 'array',
       'gender?': 'string'
     })
 
     // ADDRESS CONTAINER
-    .addContainer('address extends base', {
+    .addContainer('address extends count', {
       'locations?': 'array',
       'locations_boost?': 'array',
       'from_bound?': 'bound',
@@ -66,26 +65,26 @@ export default class DaDataModel extends BaseModel {
     })
 
     // PARTY CONTAINER
-    .addContainer('party extends base', {
+    .addContainer('party extends count', {
       'status?': 'array.party_status',
       'type?': 'array.party_types',
       'locations?': 'array',
     })
 
     // EMAIL CONTAINER
-    .addContainer('email extends base', {})
+    .addContainer('email extends count', {})
 
     // BANK CONTAINER
-    .addContainer('bank extends base', {
+    .addContainer('bank extends count', {
       'status?': 'array.party_status',
       'type?': 'array.party_types'
     })
 
     // FIND ADDRESS BY ID CONTAINER
-    .addContainer('find_address extends find', {})
+    .addContainer('find_address extends query', {})
 
     // FIND PARTY BY ID CONTAINER
-    .addContainer('find_party extends find', {
+    .addContainer('find_party extends query', {
       'type?': 'string.party_types',
       'branch_type?': 'string'
     })
@@ -97,6 +96,9 @@ export default class DaDataModel extends BaseModel {
     })
 
     .addModifiersBulk({
+      strip: (value, param = 0) => {
+        return { value: value.substr(0, param) }
+      },
       allow: (value, params) => {
         return { break: !!~params.indexOf(value) }
       },
