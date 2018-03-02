@@ -2,6 +2,14 @@ import BaseModel from 'basemodelts'
 
 const DADATA_API_URL = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs'
 
+const DADATA_SERVICES = [
+  'fio',
+  'address',
+  'party',
+  'email',
+  'bank'
+]
+
 const DADATA_HEADERS = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -39,6 +47,10 @@ export default class DaDataModel extends BaseModel {
       'count?': 'int'
     })
 
+    .describeContainer('find', {
+      'query': 'string'
+    })
+
     // FIO CONTAINER
     .addContainer('fio extends base', {
       'parts?': 'array',
@@ -67,6 +79,15 @@ export default class DaDataModel extends BaseModel {
     .addContainer('bank extends base', {
       'status?': 'array.party_status',
       'type?': 'array.party_types'
+    })
+
+    // FIND ADDRESS BY ID CONTAINER
+    .addContainer('find_address extends find', {})
+
+    // FIND PARTY BY ID CONTAINER
+    .addContainer('find_party extends find', {
+      'type?': 'string.party_types',
+      'branch_type?': 'string'
     })
 
     .addFieldProcessorsBulk({
@@ -132,6 +153,38 @@ export default class DaDataModel extends BaseModel {
       uri: `${DADATA_API_URL}/detectAddressByIp`,
       method: 'GET',
       data: { ip }
+    })()
+  }
+
+  findById(type, options) {
+    if (!this.getContainer(`find_${type}`)) {
+      return new Promise((resolve, reject) => {
+        reject({
+          error: `Find by id type "${type}" not found`
+        })
+      })
+    }
+
+    this.containers[`find_${type}`].data = { ...options }
+    return this.generateQuery({
+      uri: `${DADATA_API_URL}/findById/${type}`,
+      method: 'POST',
+      container: `find_${type}`
+    })()
+  }
+
+  checkStatus (service = '') {
+    if (service && !DADATA_SERVICES.includes(service)) {
+      return new Promise((resolve, reject) => {
+        reject({
+          error: `Service "${service}" not found`
+        })
+      })
+    }
+
+    return this.generateQuery({
+      uri: `${DADATA_API_URL}/status/${service}`,
+      method: 'GET'
     })()
   }
 }

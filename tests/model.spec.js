@@ -119,6 +119,78 @@ describe('DaDataModel', () => {
     })
   })
 
+  it('sends check status query', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.checkStatus()
+      expect(res).toBeTruthy()
+    } catch (e) {
+      console.error('Error', e)
+    }
+  })
+
+  it('sends check address status query', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.checkStatus('address')
+      expect(res).toBeTruthy()
+    } catch (e) {
+      console.error('Error', e)
+    }
+  })
+
+  it('sends check wrong status query', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.checkStatus('whatever')
+    } catch (e) {
+      expect(e).toEqual({
+        error: 'Service "whatever" not found',
+      })
+    }
+  })
+
+  it('sends find address by id query', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.findById('address', { query: '77000000000268400' })
+      expect(res).toHaveProperty('suggestions')
+      expect(res.suggestions).toBeInstanceOf(Array)
+      expect(res.suggestions).toHaveLength(1)
+    } catch (e) {
+      console.error('Error', e)
+    }
+  })
+
+  it('sends find party by id query', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.findById('party', { query: '7719402047' })
+      expect(res).toHaveProperty('suggestions')
+      expect(res.suggestions).toBeInstanceOf(Array)
+      expect(res.suggestions).toHaveLength(1)
+    } catch (e) {
+      console.error('Error', e)
+    }
+  })
+
+  it('sends wrong find by id type', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.findById('whatever', { query: '77000000000268400' })
+    } catch (e) {
+      expect(e).toEqual({
+        error: 'Find by id type "whatever" not found',
+      })
+    }
+  })
+
   it('sends suggest query', async () => {
     const model = new DaDataModel(null, TEST_API_KEY)
 
