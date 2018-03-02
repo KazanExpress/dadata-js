@@ -1,11 +1,13 @@
 import DaDataModel from '../models/dadata'
 import polyfills from '../polyfills'
 
+const TEST_API_KEY = '278908b74c6a3a5433aaec7c7364a38420722c05'
+
 describe('DaDataModel', () => {
   it('sets token', () => {
-    const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
+    const model = new DaDataModel(null, TEST_API_KEY)
 
-    expect(model.token).toBe('278908b74c6a3a5433aaec7c7364a38420722c05')
+    expect(model.token).toBe(TEST_API_KEY)
   })
 
   it('adds api headers', () => {
@@ -118,7 +120,7 @@ describe('DaDataModel', () => {
   })
 
   it('sends suggest query', async () => {
-    const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
+    const model = new DaDataModel(null, TEST_API_KEY)
 
     try {
       let res = await model.suggest('address', { query: 'Казань', count: 5 })
@@ -131,7 +133,7 @@ describe('DaDataModel', () => {
   })
 
   it('sends wrong suggest type', async () => {
-    const model = new DaDataModel(null, '278908b74c6a3a5433aaec7c7364a38420722c05')
+    const model = new DaDataModel(null, TEST_API_KEY)
 
     try {
       let res = await model.suggest('whatever', { query: 'Казань', count: 5 })
@@ -139,6 +141,17 @@ describe('DaDataModel', () => {
       expect(e).toEqual({
         error: 'Suggestion type "whatever" not found',
       })
+    }
+  })
+
+  it('sends ip detection query', async () => {
+    const model = new DaDataModel(null, TEST_API_KEY)
+
+    try {
+      let res = await model.detectAddressByIP()
+      expect(res).toHaveProperty('location')
+    } catch (e) {
+      console.error('Error', e)
     }
   })
 
