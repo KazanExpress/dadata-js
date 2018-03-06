@@ -6,6 +6,6 @@ before_install:
   - 'npm install -g codecov'
   - 'rm -rf node_modules'
 install: npm i
-script: npm run build && npm run coverage && codecov
+script: npm run coverage && codecov
 notifications:
   email: false
