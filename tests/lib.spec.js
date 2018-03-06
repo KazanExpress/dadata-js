@@ -2,7 +2,7 @@ import '../polyfills'
 import DaDataJS from '../'
 
 describe('dadata-js', () => {
-  const token = '278908b74c6a3a5433aaec7c7364a38420722c05';
+  const token = process.env.TOKEN;
   const dadata = new DaDataJS(token)
 
   it('is created from class', () => {

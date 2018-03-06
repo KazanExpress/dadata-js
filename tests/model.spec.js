@@ -1,7 +1,7 @@
 import DaDataModel from '../models/dadata'
 import polyfills from '../polyfills'
 
-const TEST_API_KEY = '278908b74c6a3a5433aaec7c7364a38420722c05'
+const TEST_API_KEY = process.env.TOKEN;
 
 describe('DaDataModel', () => {
 
