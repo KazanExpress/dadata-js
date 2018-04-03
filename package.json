@@ -1,6 +1,6 @@
 {
   "name": "dadata-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A dadata js client",
   "main": "index.js",
   "types": "types/index.d.ts",
