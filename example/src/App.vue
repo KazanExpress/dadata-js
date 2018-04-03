@@ -52,7 +52,7 @@
 
         <!-- <div class="g"><input type="text"></div> -->
 
-        <template slot="miscItem-above" slot-scope="{ suggestions, query }" v-if="suggestions.length > 0">
+        <template slot="misc-item-above" slot-scope="{ suggestions, query }" v-if="suggestions.length > 0">
           <div class="misc-item">
             <span>You're searching for '{{ query }}'.</span>
           </div>
@@ -62,11 +62,11 @@
           <hr>
         </template>
 
-        <div slot="suggestionItem" slot-scope="scope">
+        <div slot="suggestion-item" slot-scope="scope">
           <span v-html="boldenSuggestion(scope)"></span>
         </div>
 
-        <div class="misc-item" slot="miscItem-below" slot-scope="{ suggestions }" v-if="loading">
+        <div class="misc-item" slot="misc-item-below" slot-scope="{ suggestions }" v-if="loading">
           <span>Loading...</span>
         </div>
       </vue-suggest>
