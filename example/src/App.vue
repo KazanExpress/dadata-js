@@ -85,7 +85,7 @@
 </template>
 
 <script>
-  import VueSuggest from 'vue-simple-suggest'
+  import VueSuggest from 'vue-simple-suggest/lib'
   import DadataClient from 'dadata-js'
 
   const DADATA_API_KEY = '278908b74c6a3a5433aaec7c7364a38420722c05'

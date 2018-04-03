@@ -32,7 +32,6 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "vue": "^2.5.16",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.4",
@@ -47,8 +46,9 @@
     "jest": "^22.4.2",
     "markdown-styles": "^3.1.10",
     "regenerator-runtime": "^0.11.1",
+    "vue": "^2.5.16",
     "vue-loader": "^14.2.1",
-    "vue-simple-suggest": "^1.5.3",
+    "vue-simple-suggest": "^1.5.4",
     "vue-template-compiler": "^2.5.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.8",
