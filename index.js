@@ -22,6 +22,7 @@ export default class DaData {
         throw new Error('Result is empty')
       }
     } catch (e) {
+      console.error(e);
       return [];
     }
   }
