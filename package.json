@@ -47,7 +47,7 @@
     "markdown-styles": "^3.1.10",
     "regenerator-runtime": "^0.11.1",
     "vue-loader": "^14.2.1",
-    "vue-simple-suggest": "^1.2.2",
+    "vue-simple-suggest": "^1.5.3",
     "vue-template-compiler": "^2.5.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.8",
