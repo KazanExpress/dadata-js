@@ -2,7 +2,7 @@ import '../polyfills'
 import DaDataJS from '../'
 
 describe('dadata-js', () => {
-  const token = '278908b74c6a3a5433aaec7c7364a38420722c05';
+  const token = process.env.TOKEN;
   const dadata = new DaDataJS(token)
 
   it('is created from class', () => {
@@ -21,9 +21,10 @@ describe('dadata-js', () => {
     expect(result).toBeTruthy();
   })
 
-  it('fetches ip', async () => {
-    const result = await dadata.detectAddressByIP();
-    expect(result.location).toBeTruthy();
-    expect(result.location.data).toBeTruthy();
-  })
+  // CI doesn't allow IP detection.
+  // it('fetches ip', async () => {
+  //   const result = await dadata.detectAddressByIP();
+  //   expect(result.location).toBeTruthy();
+  //   expect(result.location.data).toBeTruthy();
+  // })
 })
