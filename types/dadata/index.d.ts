@@ -1,13 +1,7 @@
 import { DaDataModel } from '../models/dadata'
 import * as Responses from './responses'
 
-declare enum SuggestionTypes {
-  NAME = 'fio',
-  ADDRESS = 'address',
-  PARTY = 'party',
-  EMAIL = 'email',
-  BANK = 'bank'
-}
+type SuggestionType = 'fio' | 'address' | 'party' | 'email' | 'bank'
 
 interface Options {
 
@@ -20,11 +14,11 @@ export default class DaData {
 
   model: DaDataModel<this>
 
-  suggest (type: SuggestionTypes, query: string, count?: number, options?: any): Promise<string>
+  suggest (type: SuggestionType, query: string, count?: number, options?: any): Promise<string>
 
   clearCache(): any[]
 
   detectAddressByIP(): any
 }
 
-export { Responses, SuggestionTypes, Options }
+export { Responses, SuggestionType, Options }

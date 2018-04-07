@@ -1,5 +1,5 @@
-import '../polyfills'
-import DaDataJS from '../'
+import 'whatwg-fetch'
+import DaDataJS from '../lib'
 
 describe('dadata-js', () => {
   const token = process.env.TOKEN;

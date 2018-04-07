@@ -1,5 +1,5 @@
-import DaDataModel from '../models/dadata'
-import polyfills from '../polyfills'
+import 'whatwg-fetch'
+import DaDataModel from '../lib/models/dadata'
 
 const TEST_API_KEY = process.env.TOKEN;
 
