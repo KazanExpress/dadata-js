@@ -25,7 +25,7 @@ class Container {
         this.name = name;
         this.fields = fields;
         if (source) {
-            this.data = new Proxy(source, {});
+            this.data = source;
         }
     }
     /**
@@ -33,7 +33,7 @@ class Container {
      * @param source Data source
      */
     setSource(source) {
-        this.data = new Proxy(source, {});
+        this.data = source;
         this.model.setProxy(this.name);
     }
 }
@@ -107,7 +107,7 @@ class BaseModel {
         if (this.getContainer(container_name)) {
             let original = this.containers[container_name].data;
             let proxy_name = `${DEFAULTS.CONTAINER_PROXY_PREFIX}${container_name}`;
-            this[proxy_name] = new Proxy(original, {});
+            this[proxy_name] = original;
         }
         else {
             console.error(`
@@ -235,9 +235,7 @@ class BaseModel {
                 }
             }
         }
-        else {
-            return name;
-        }
+        return name;
     }
     /**
      * Adds a new modifier
