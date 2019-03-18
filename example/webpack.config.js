@@ -51,7 +51,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'dadata-js': path.resolve(__dirname, '../index.js')
+      'dadata-js': path.resolve(__dirname, '../lib')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },

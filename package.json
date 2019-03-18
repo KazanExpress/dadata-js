@@ -37,17 +37,20 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.4",
     "babel-loader": "^7.1.4",
     "babel-plugin-es6-promise": "^1.1.1",
     "babel-plugin-transform-async-to-promises": "^0.5.5",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "core-js": "^2.5.3",
     "css-loader": "^0.28.7",
+    "es6-promise": "^4.2.6",
     "file-loader": "^1.1.4",
     "fs-extra": "^5.0.0",
     "html-loader": "^0.5.5",
@@ -78,6 +81,27 @@
     ],
     "transform": {
       "^.+\\.js$": "babel-jest"
-    }
+    },
+    "transformIgnorePatterns": [
+      "node_modules"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "exclude": [
+            "transform-es2015-classes"
+          ]
+        }
+      ]
+    ],
+    "plugins": [
+      "es6-promise",
+      "transform-async-to-promises",
+      "transform-object-assign",
+      "transform-object-rest-spread"
+    ]
   }
 }
