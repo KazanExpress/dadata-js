@@ -618,7 +618,8 @@ var DaDataModel = function (_BaseModel) {
       'locations?': 'array',
       'locations_boost?': 'array',
       'from_bound?': 'bound',
-      'to_bound?': 'bound'
+      'to_bound?': 'bound',
+      'restrict_value?': 'bool'
     })
 
     // PARTY CONTAINER
