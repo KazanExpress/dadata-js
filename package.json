@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.4",
     "babel-loader": "^7.1.4",
     "babel-plugin-es6-promise": "^1.1.1",
     "babel-plugin-transform-async-to-promises": "^0.5.5",
@@ -78,6 +79,20 @@
     ],
     "transform": {
       "^.+\\.js$": "babel-jest"
-    }
+    },
+    "transformIgnorePatterns": [
+      "node_modules"
+    ]
+  },
+  "babel": {
+    "presets":[
+      ["env", { "exclude": ["transform-es2015-classes"] }]
+    ],
+    "plugins": [
+      "es6-promise",
+      "transform-async-to-promises",
+      "transform-object-assign",
+      "transform-object-rest-spread"
+    ]
   }
 }
