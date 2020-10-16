@@ -8,7 +8,7 @@ interface Options {
 }
 
 export default class DaData {
-  constructor (options: DaData)
+  constructor (token: string)
 
   readonly suggestions: any[]
 
